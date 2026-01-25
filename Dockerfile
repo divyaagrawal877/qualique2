@@ -25,15 +25,13 @@ WORKDIR /app
 
 # Create non-root user for security
 RUN addgroup -S spring && adduser -S spring -G spring
-
-# Create uploads and data directories with proper permissions (before switching user)
-RUN mkdir -p uploads data && chown -R spring:spring uploads data
-
-# Switch to non-root user
 USER spring:spring
 
 # Copy the built JAR
 COPY --from=build /app/target/*.jar app.jar
+
+# Create uploads directory
+RUN mkdir -p uploads
 
 # Expose port (Railway will override with PORT env var)
 EXPOSE 8080

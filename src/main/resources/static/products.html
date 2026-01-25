@@ -248,9 +248,9 @@
                             <div class="col-md-6 col-lg-4 mb-4">
                                 <div class="product-card h-100">
                                     <div class="product-image">
-                                        <img src="${product.imageUrl || 'https://via.placeholder.com/300x200?text=Product'}" 
+                                        <img src="${product.imageUrl || 'https://placehold.co/300x200?text=Product'}" 
                                              alt="${product.name}"
-                                             onerror="this.src='https://via.placeholder.com/300x200?text=Product'">
+                                             onerror="this.src='https://placehold.co/300x200?text=Product'">
                                     </div>
                                     <div class="product-info">
                                         <span class="category">${product.categoryName || 'General'}</span>
@@ -337,7 +337,7 @@
                 if (result.success && result.data) {
                     const product = result.data;
                     document.getElementById('modal-product-name').textContent = product.name;
-                    document.getElementById('modal-product-image').src = product.imageUrl || 'https://via.placeholder.com/400x300?text=Product';
+                    document.getElementById('modal-product-image').src = product.imageUrl || 'https://placehold.co/400x300?text=Product';
                     document.getElementById('modal-product-category').textContent = product.categoryName || 'General';
                     document.getElementById('modal-product-description').textContent = product.description || '';
                     document.getElementById('modal-product-model').textContent = product.modelNumber || '-';

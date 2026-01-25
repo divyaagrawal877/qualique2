@@ -148,9 +148,9 @@
                 tbody.innerHTML = result.data.map(brand => `
                     <tr>
                         <td>
-                            <img src="${brand.logoUrl || 'https://via.placeholder.com/50x50?text=' + brand.name.charAt(0)}" 
+                            <img src="${brand.logoUrl || 'https://placehold.co/50x50?text=' + brand.name.charAt(0)}" 
                                  class="product-img" alt="${brand.name}"
-                                 onerror="this.src='https://via.placeholder.com/50x50?text=${brand.name.charAt(0)}'">
+                                 onerror="this.src='https://placehold.co/50x50?text=${brand.name.charAt(0)}'">
                         </td>
                         <td><strong>${brand.name}</strong></td>
                         <td>${brand.websiteUrl ? `<a href="${brand.websiteUrl}" target="_blank">Visit</a>` : '-'}</td>

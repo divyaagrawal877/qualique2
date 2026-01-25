@@ -180,8 +180,8 @@ async function loadFeaturedProducts() {
                     <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                         <div class="product-card">
                             <div class="product-image">
-                                <img src="${product.imageUrl || 'https://via.placeholder.com/300x200?text=Product'}" alt="${product.name}" 
-                                     onerror="this.src='https://via.placeholder.com/300x200?text=Product'">
+                                <img src="${product.imageUrl || 'https://placehold.co/300x200?text=Product'}" alt="${product.name}" 
+                                     onerror="this.src='https://placehold.co/300x200?text=Product'">
                             </div>
                             <div class="product-info">
                                 <span class="category">${product.categoryName || 'General'}</span>
@@ -217,9 +217,9 @@ async function loadBrands() {
             } else {
                 container.innerHTML = brands.map(brand => `
                     <div class="brand-item">
-                        <img src="${brand.logoUrl || 'https://via.placeholder.com/150x60?text=' + brand.name}" 
+                        <img src="${brand.logoUrl || 'https://placehold.co/150x60?text=' + brand.name}" 
                              alt="${brand.name}" 
-                             onerror="this.src='https://via.placeholder.com/150x60?text=${brand.name}'">
+                             onerror="this.src='https://placehold.co/150x60?text=${brand.name}'">
                     </div>
                 `).join('');
             }
