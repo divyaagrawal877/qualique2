@@ -26,8 +26,8 @@ WORKDIR /app
 # Create non-root user for security
 RUN addgroup -S spring && adduser -S spring -G spring
 
-# Create uploads directory with proper permissions (before switching user)
-RUN mkdir -p uploads && chown spring:spring uploads
+# Create uploads and data directories with proper permissions (before switching user)
+RUN mkdir -p uploads data && chown -R spring:spring uploads data
 
 # Switch to non-root user
 USER spring:spring
