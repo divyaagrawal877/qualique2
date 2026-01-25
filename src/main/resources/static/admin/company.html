@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Info - Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/admin/css/admin.css" rel="stylesheet">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h4><i class="fas fa-cog me-2"></i>Admin Panel</h4>
+            <small>Qualique Management</small>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+            <li><a href="categories.html"><i class="fas fa-th-large"></i><span>Categories</span></a></li>
+            <li><a href="products.html"><i class="fas fa-box"></i><span>Products</span></a></li>
+            <li><a href="brands.html"><i class="fas fa-star"></i><span>Brands</span></a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i><span>Gallery</span></a></li>
+            <li><a href="inquiries.html"><i class="fas fa-envelope"></i><span>Inquiries</span></a></li>
+            <li><a href="company.html" class="active"><i class="fas fa-building"></i><span>Company Info</span></a></li>
+            <li><a href="/" target="_blank"><i class="fas fa-external-link-alt"></i><span>View Website</span></a></li>
+            <li><a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header class="admin-header">
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            <h5>Company Information</h5>
+            <div class="user-dropdown dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fas fa-user-circle fa-2x me-2 text-primary"></i>
+                    <span id="user-name">Admin</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <form id="company-form">
+                <!-- Basic Info -->
+                <div class="data-card mb-4">
+                    <div class="data-card-header">
+                        <h5><i class="fas fa-info-circle me-2"></i>Basic Information</h5>
+                    </div>
+                    <div class="data-card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Company Name *</label>
+                                    <input type="text" class="form-control" id="company-name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Tagline</label>
+                                    <input type="text" class="form-control" id="tagline" placeholder="Your company tagline">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>About Us</label>
+                            <textarea class="form-control" id="about-us" rows="4" placeholder="Describe your company..."></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Mission</label>
+                                    <textarea class="form-control" id="mission" rows="2"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Vision</label>
+                                    <textarea class="form-control" id="vision" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="data-card mb-4">
+                    <div class="data-card-header">
+                        <h5><i class="fas fa-phone me-2"></i>Contact Information</h5>
+                    </div>
+                    <div class="data-card-body p-4">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="tel" class="form-control" id="phone" placeholder="+91 1234567890">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Alternate Phone</label>
+                                    <input type="tel" class="form-control" id="alternate-phone">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" id="address" rows="2"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>City</label>
+                                    <input type="text" class="form-control" id="city">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>State</label>
+                                    <input type="text" class="form-control" id="state">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <input type="text" class="form-control" id="country" value="India">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Pincode</label>
+                                    <input type="text" class="form-control" id="pincode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Business Hours</label>
+                            <input type="text" class="form-control" id="business-hours" placeholder="Mon - Sat: 9:00 AM - 6:00 PM">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="data-card mb-4">
+                    <div class="data-card-header">
+                        <h5><i class="fas fa-share-alt me-2"></i>Social Media Links</h5>
+                    </div>
+                    <div class="data-card-body p-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><i class="fab fa-facebook me-2"></i>Facebook</label>
+                                    <input type="url" class="form-control" id="facebook" placeholder="https://facebook.com/...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><i class="fab fa-instagram me-2"></i>Instagram</label>
+                                    <input type="url" class="form-control" id="instagram" placeholder="https://instagram.com/...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><i class="fab fa-linkedin me-2"></i>LinkedIn</label>
+                                    <input type="url" class="form-control" id="linkedin" placeholder="https://linkedin.com/...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><i class="fab fa-twitter me-2"></i>Twitter</label>
+                                    <input type="url" class="form-control" id="twitter" placeholder="https://twitter.com/...">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><i class="fab fa-youtube me-2"></i>YouTube</label>
+                                    <input type="url" class="form-control" id="youtube" placeholder="https://youtube.com/...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label><i class="fab fa-pinterest me-2"></i>Pinterest</label>
+                                    <input type="url" class="form-control" id="pinterest" placeholder="https://pinterest.com/...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer & SEO -->
+                <div class="data-card mb-4">
+                    <div class="data-card-header">
+                        <h5><i class="fas fa-code me-2"></i>Footer & Other Settings</h5>
+                    </div>
+                    <div class="data-card-body p-4">
+                        <div class="form-group">
+                            <label>Footer Text</label>
+                            <textarea class="form-control" id="footer-text" rows="2" placeholder="Short description for footer"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Copyright Text</label>
+                            <input type="text" class="form-control" id="copyright" placeholder="© 2026 Your Company. All Rights Reserved.">
+                        </div>
+                        <div class="form-group">
+                            <label>Google Maps Embed Code</label>
+                            <textarea class="form-control" id="google-maps" rows="3" placeholder="Paste your Google Maps iframe embed code here..."></textarea>
+                            <small class="text-muted">Go to Google Maps → Share → Embed a map → Copy HTML</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-end mb-4">
+                    <button type="submit" class="btn btn-primary btn-lg" id="save-btn">
+                        <i class="fas fa-save me-2"></i>Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/admin/js/admin.js"></script>
+    <script>
+        async function loadCompanyInfo() {
+            const result = await apiCall('/company');
+            if (result && result.success && result.data) {
+                const c = result.data;
+                document.getElementById('company-name').value = c.companyName || '';
+                document.getElementById('tagline').value = c.tagline || '';
+                document.getElementById('about-us').value = c.aboutUs || '';
+                document.getElementById('mission').value = c.mission || '';
+                document.getElementById('vision').value = c.vision || '';
+                document.getElementById('email').value = c.email || '';
+                document.getElementById('phone').value = c.phone || '';
+                document.getElementById('alternate-phone').value = c.alternatePhone || '';
+                document.getElementById('address').value = c.address || '';
+                document.getElementById('city').value = c.city || '';
+                document.getElementById('state').value = c.state || '';
+                document.getElementById('country').value = c.country || 'India';
+                document.getElementById('pincode').value = c.pincode || '';
+                document.getElementById('business-hours').value = c.businessHours || '';
+                document.getElementById('facebook').value = c.facebookUrl || '';
+                document.getElementById('instagram').value = c.instagramUrl || '';
+                document.getElementById('linkedin').value = c.linkedinUrl || '';
+                document.getElementById('twitter').value = c.twitterUrl || '';
+                document.getElementById('youtube').value = c.youtubeUrl || '';
+                document.getElementById('pinterest').value = c.pinterestUrl || '';
+                document.getElementById('footer-text').value = c.footerText || '';
+                document.getElementById('copyright').value = c.copyrightText || '';
+                document.getElementById('google-maps').value = c.googleMapsEmbed || '';
+            }
+        }
+        
+        document.getElementById('company-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('save-btn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Saving...';
+            
+            try {
+                const data = {
+                    companyName: document.getElementById('company-name').value,
+                    tagline: document.getElementById('tagline').value,
+                    aboutUs: document.getElementById('about-us').value,
+                    mission: document.getElementById('mission').value,
+                    vision: document.getElementById('vision').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    alternatePhone: document.getElementById('alternate-phone').value,
+                    address: document.getElementById('address').value,
+                    city: document.getElementById('city').value,
+                    state: document.getElementById('state').value,
+                    country: document.getElementById('country').value,
+                    pincode: document.getElementById('pincode').value,
+                    businessHours: document.getElementById('business-hours').value,
+                    facebookUrl: document.getElementById('facebook').value,
+                    instagramUrl: document.getElementById('instagram').value,
+                    linkedinUrl: document.getElementById('linkedin').value,
+                    twitterUrl: document.getElementById('twitter').value,
+                    youtubeUrl: document.getElementById('youtube').value,
+                    pinterestUrl: document.getElementById('pinterest').value,
+                    footerText: document.getElementById('footer-text').value,
+                    copyrightText: document.getElementById('copyright').value,
+                    googleMapsEmbed: document.getElementById('google-maps').value
+                };
+                
+                const result = await apiCall('/company', 'PUT', data);
+                if (result && result.success) {
+                    showNotification('Company information updated successfully!');
+                } else {
+                    showNotification(result?.message || 'Error saving', 'danger');
+                }
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-save me-2"></i>Save Changes';
+            }
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            loadCompanyInfo();
+        });
+    </script>
+</body>
+</html>
