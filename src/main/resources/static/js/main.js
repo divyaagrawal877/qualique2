@@ -33,6 +33,15 @@ async function loadCompanyInfo() {
             updateSocialLink('social-linkedin', 'footer-linkedin', company.linkedinUrl);
             updateSocialLink('social-twitter', 'footer-twitter', company.twitterUrl);
             
+            // Update site logo from company info
+            const siteLogo = document.getElementById('site-logo');
+            const logoText = document.getElementById('logo-text');
+            if (siteLogo && company.logoUrl) {
+                siteLogo.src = company.logoUrl;
+                siteLogo.style.display = '';
+                if (logoText) logoText.style.display = 'none';
+            }
+
             // Update hero section
             const heroTitle = document.getElementById('hero-title');
             if (heroTitle && company.companyName) {
