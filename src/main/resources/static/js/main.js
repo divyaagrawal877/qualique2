@@ -42,6 +42,12 @@ async function loadCompanyInfo() {
                 if (logoText) logoText.style.display = 'none';
             }
 
+            // Update favicon from company info
+            const siteFavicon = document.getElementById('site-favicon');
+            if (siteFavicon && company.faviconUrl) {
+                siteFavicon.href = company.faviconUrl;
+            }
+
             // Update hero section
             const heroTitle = document.getElementById('hero-title');
             if (heroTitle && company.companyName) {
