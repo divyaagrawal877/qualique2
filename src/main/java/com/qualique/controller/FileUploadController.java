@@ -51,7 +51,7 @@ public class FileUploadController {
         }
     }
 
-    @GetMapping("/uploads/{filename}")
+    @GetMapping("/uploads/{filename:.+}")
     public ResponseEntity<byte[]> serveFile(@PathVariable String filename) {
         return storedFileRepository.findByFilename(filename)
                 .map(file -> ResponseEntity.ok()
