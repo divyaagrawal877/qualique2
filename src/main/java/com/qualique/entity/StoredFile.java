@@ -25,7 +25,6 @@ public class StoredFile {
     @Column(nullable = false)
     private Long fileSize;
 
-    @Lob
     @Column(nullable = false, columnDefinition = "bytea")
     private byte[] data;
 
